@@ -18,17 +18,18 @@ PartialSum supports following operations in O(1) time
 PartialSum is sutable for storing small (but somethimes large) non-negative integers
 such as lengths of string.
 
-Note that if we store S[0...n) using interger array (e.g. []uint32),
-where S[i] = Sum(i), then S requires O(log n) time for Find(), and needs 32n bits.
+Note that if we store S[0...n) using interger array (e.g. []uint64),
+where S[i] = Sum(i), then S requires O(log n) time for Find(), and needs 64n bits.
 
-|       | PartialSum | S[0...n), S[i]=Sum(i) |
-|Space(bits) | n + s | 32n |
+|       | PartialSum | []uint64 |
+|-------|------------|-----------------------|
+|Space(bits) | n + s | 64n |
 |Lookup | O(1) | O(1) |
 |Sum | O(1) | O(1) |
 |Find | O(1) | O(log n) |
 
-partialsum uses rsdic (succinct rank/select dictionary)
-	- http://github.com/hillbig/rsdic/
+partialsum uses [rsdic](http://github.com/hillbig/rsdic/) (succinct rank/select dictionary)
+
 
 Usage
 =====
