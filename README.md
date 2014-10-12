@@ -34,9 +34,9 @@ partialsum uses [rsdic](http://github.com/hillbig/rsdic/) (succinct rank/select 
 Usage
 =====
 ```
-import "github.com/hillbig/partialsums"
+import "github.com/hillbig/partialsum"
 
-ps := partialsums.New()
+ps := partialsum.New()
 
 ps.Num() // == 1 not 0
 
