@@ -8,7 +8,7 @@ in O(1) time using at most (s + n) bits where s is the sum of V[0...n).
 
 PartialSum supports following operations in O(1) time
 
-	- IncTail(ind, val) V[ind] += val. ind should be the last one, that is ind >= Num-1
+	- IncTail(ind, val) V[ind] += val. ind should be the last one, that is ind >= Num
 	- Lookup(ind) returns V[ind]
 	- Sum(ind) returns V[0]+V[1]+...+V[ind-1]
 	- Find(val) returns ind satisfying Sum(ind) <= val < Sum(ind+1)
@@ -37,8 +37,6 @@ Usage
 import "github.com/hillbig/partialsum"
 
 ps := partialsum.New()
-
-ps.Num() // == 1 not 0
 
 ps.IncTail(0, 5)
 ps.IncTail(2, 4)

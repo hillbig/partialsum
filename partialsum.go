@@ -41,10 +41,8 @@ type PartialSum interface {
 }
 
 func New() PartialSum {
-	dic := rsdic.New()
-	dic.PushBack(true)
 	return &partialSumImpl{
-		dic: dic,
+		dic: rsdic.New(),
 	}
 }
 
@@ -53,7 +51,7 @@ type partialSumImpl struct {
 }
 
 func (ps *partialSumImpl) IncTail(ind uint64, val uint64) {
-	for i := ps.dic.OneNum(); i <= ind; i++ {
+	for i := ps.Num(); i <= ind; i++ {
 		ps.dic.PushBack(true)
 	}
 	for i := uint64(0); i < val; i++ {

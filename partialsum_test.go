@@ -8,7 +8,7 @@ import (
 func TestPartialSum(t *testing.T) {
 	ps := New()
 	Convey("When an empty PartialSum is examined", t, func() {
-		So(ps.Num(), ShouldEqual, 1)
+		So(ps.Num(), ShouldEqual, 0)
 		So(ps.AllSum(), ShouldEqual, 0)
 	})
 
